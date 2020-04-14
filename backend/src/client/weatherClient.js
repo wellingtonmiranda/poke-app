@@ -8,6 +8,6 @@ module.exports = {
             `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${KEY}`
         );
 
-        return weatherResponse.body;
+        return weatherResponse.body; 
     },
 };
