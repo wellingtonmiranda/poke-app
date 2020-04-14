@@ -9,34 +9,23 @@ export default function Search() {
   const [ result, setResult] = useState('');
 
   async function handleCity(e) {
-    console.log('Chamou a função');
     e.preventDefault()
    
 
     try {
-      console.log('try');
       const response = await api.get(`/pokemon?city=${city}`)
       console.log(response.data)
-      /*let raining;
-      if (response.data.weather === 'Rain') {
-        raining = " It's raining"
-      } else {
-        raining = " It's not raining"
-      }*/
-      console.log('antes do resultado');
-      setResult(response.data);
-      /*alert(`The pokemon is : ${response.data.pokemon.pokemon.name}, Temperature ${response.data.temperature} and${raining}.`)*/
-      console.log('depois');
       
+      setResult(response.data);
+    
       setCity('')
       
-      console.log('depois do setCity');
+     
     } catch(err) {
-      console.log(err);
       alert('Could not find city');
       setCity('')
     }
-    console.log('fim');
+    
   }
  
   
